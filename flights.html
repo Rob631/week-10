@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flights</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+</head>
+<body class="container">
+    <br>
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-sm">
+                    <div class="form-group">
+                        <label for="new-departure-date">Departure Date</label>
+                        <input type="date" class="form-control" id="new-departure-date">
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="form-group">
+                        <label for="new-arrival-date">Arrival Date</label>
+                        <input type="date" class="form-control" id="new-arrival-date">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm">
+                    <div class="form-group">
+                        <label for="new-flight">New Flight</label>
+                        <input type="text" class="form-control" id="new-flight" placeholder="New Flight">
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div>
+                <button id="add" class="btn btn-primary form-control">Create</button>
+            </div>
+        </div>
+    </div>
+    <table id="flights" class="table table-dark table-striped">
+        <tr>
+            <th>New Flight</th>
+            <th>Departure Date</th>
+            <th>Arrival Date</th>
+            <th>Actions</th>
+        </tr>
+    </table>
+<script src="flights.js"></script>    
+<script src="node_modules/bootstrap/dist/css/bootstrap.css"></script>
+<script src="node_modules/jquery/dist/jquery.js"></script>
+</body>
+</html>
