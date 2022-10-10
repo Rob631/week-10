@@ -3,12 +3,12 @@ document.getElementById('add').addEventListener('click', () => {
     let createdDate = new Date();
     let table = document.getElementById('flights');
     let row = table.insertRow(1);
-    row.setAttribute('id', `item-$(id)`);
+    row.setAttribute('id', `item-${id}`);
     row.insertCell(0).innerHTML = document.getElementById('new-flight').value;
-    row.insertCell(1).innerHTML = `${createdDate.getFullYear()}-${createdDate.getMonth() + 1}-${createdDate.getDate()}`;
-    row.insertCell(2).innerHTML = document.getElementById('new-departure-date').value;
-    row.insertCell(3).innerHTML = document.getElementById('new-arrival-date').value;
-    let actions = row.insertCell(4);
+   // row.insertCell(1).innerHTML = `${createdDate.getFullYear()}-${createdDate.getMonth() + 1}-${createdDate.getDate()}`;//
+    row.insertCell(1).innerHTML = document.getElementById('new-departure-date').value;
+    row.insertCell(2).innerHTML = document.getElementById('new-arrival-date').value;
+    let actions = row.insertCell(3);
     actions.appendChild(createDeleteButton(id++));
     document.getElementById('new-flight').value = '';
 });
@@ -21,7 +21,7 @@ function createDeleteButton(id) {
     btn.onclick = () => {
         console.log(`Deleting row with id: item-${id}`);
         let elementToDelete = document.getElementById(`item-${id}`);
-        elementToDelete.removeChild(elementToDelete);
+        elementToDelete.parentNode.removeChild(elementToDelete);
     };
     return btn;
 }
